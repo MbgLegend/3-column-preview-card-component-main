@@ -1,0 +1,124 @@
+/* Bright orange: hsl(31, 77%, 52%)
+Dark cyan: hsl(184, 100%, 22%)
+Very dark cyan: hsl(179, 100%, 13%) */
+/* Transparent white (paragraphs): hsla(0, 0%, 100%, 0.75)
+Very light gray (background, headings, buttons): hsl(0, 0%, 95%) */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+:root {
+    --primary-color: #000;
+    --border-raduis: 0.35rem;
+    --Lexend: 'Lexend Deca', sans-serif;
+    --big-shoulders: 'Big Shoulders Display', cursive;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 6rem;
+    font-family: var(--Lexend);
+    background-color: hsl(0, 0%, 95%);
+}
+.Canvas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.Canvas .container:nth-child(1) {
+    --primary-color: hsl(31, 77%, 52%);
+}
+.Canvas .container:nth-child(2) {
+    --primary-color: hsl(184, 100%, 22%);
+}
+.Canvas .container:nth-child(3) {
+    --primary-color: hsl(179, 100%, 13%);
+}
+.Canvas .container {
+    padding: 2.6rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.7rem;
+    background-color: var(--primary-color);
+}
+.Canvas .container img {
+    width: 4rem;
+}
+.Canvas .container h1 {
+    font-family: var(--big-shoulders);
+    font-size: 2.35rem;
+    text-transform: uppercase;
+    color:  hsl(0, 0%, 95%);
+}
+.Canvas .container p {
+    color: hsla(0, 0%, 100%, 0.61);
+    font-family: var(--Lexend);
+    font-weight: 300;
+    font-weight: 400;
+    font-size: 0.835rem;
+    line-height: 1.7;
+}
+.Canvas .container button {
+    margin-top: 2.85rem;
+    width: 70%;
+    padding: 0.75rem 1.4rem;
+    border: 1px solid transparent;
+    font-size: 0.9rem;
+    font-family: var(--Lexend);
+    border-radius: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.Canvas .container button:hover {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+}
+@media (min-width: 951px) {
+    body {
+        height: 100vh;
+    }
+    .Canvas {
+        width: 52rem;
+    }
+    .Canvas .container:nth-child(1) {
+        border-top-left-radius: var(--border-raduis);
+        border-bottom-left-radius: var(--border-raduis);
+    }
+    .Canvas .container:nth-child(3) {
+        border-top-right-radius: var(--border-raduis);
+        border-bottom-right-radius: var(--border-raduis);
+    }
+}
+@media (max-width: 950px)  {
+    body {
+        padding: 3rem;
+    }
+    .Canvas {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 18rem;
+    }
+    .Canvas .container {
+        row-gap: 1.45rem;
+    }
+    .Canvas .container:nth-child(1) {
+        border-top-left-radius: var(--border-raduis);
+        border-top-right-radius: var(--border-raduis);
+    }
+    .Canvas .container:nth-child(3) {
+        border-bottom-left-radius: var(--border-raduis);
+        border-bottom-right-radius: var(--border-raduis);
+    }
+    .Canvas .container button {
+        margin-top: 0;
+        width: 60%;
+        padding: 0.85rem;
+    }
+}
